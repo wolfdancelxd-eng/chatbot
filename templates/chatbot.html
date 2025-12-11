@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot Aeronet</title>
+    
+    <!-- CSS desde carpeta static -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/bot.css') }}">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">
+                <!-- Imagen desde static/img -->
+                <img class="imagen" src="{{ url_for('static', filename='img/logo.jpg') }}" alt="logo" height="50" width="70">
+                <span class="Aeronet">AereoNet</span>
+            </div>
+        </nav>
+    </header>
+    
+    <main>
+        <section>
+            <div class="contenedor">
+                <div class="chat">
+                    <h1>Asistente Virtual de Aeronet</h1>
+                    <p>Estoy aquí para ayudarte con tus consultas</p>
+                </div>
+            </div>
+
+            <div class="botones">
+                <button class="btn" onclick="enviarMensaje('horario')">⏰ Horarios</button>
+                <button class="btn" onclick="enviarMensaje('precio')">💰 Precios</button>
+                <button class="btn" onclick="enviarMensaje('contacto')">📧 Contactos</button>
+                <button class="btn" onclick="enviarMensaje('ayuda')">❓ Ayuda</button>
+            </div>
+
+            <div class="bot" id="ChatBot">
+                <div class="mensajebot">
+                    <div class="contenido">
+                        ¡Hola! Soy el asistente virtual de AereoNet
+                    </div>               
+                </div>
+            </div>
+
+            <div class="escribir">
+                <input type="text" id="mensaje" placeholder="Escribe tu mensaje aquí ..." onkeypress="if(event.key === 'Enter') Mensaje()">
+                <button class="btn-enviar" onclick="enviarMensaje()">Enviar</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- JS desde carpeta static -->
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>
